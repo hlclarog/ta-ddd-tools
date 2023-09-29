@@ -5,7 +5,7 @@ main_repository_path=$(git rev-parse --show-superproject-working-tree)
 
 # Check if the path to the main repository is null (not in a Git repository)
 if [ -z "$main_repository_path" ]; then
-  echo "You are not in a Git repository."
+  echo "❌ You are not in a Git repository."
   exit 1
 fi
 
