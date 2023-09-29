@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Get the path to the main repository relative to the current directory
-main_repository_path=$(git rev-parse --show-toplevel)
+main_repository_path=$(git rev-parse --show-superproject-working-tree)
 
 # Check if the path to the main repository is null (not in a Git repository)
 if [ -z "$main_repository_path" ]; then
