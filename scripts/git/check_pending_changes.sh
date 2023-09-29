@@ -5,7 +5,7 @@ main_repository_path=$(git rev-parse --show-superproject-working-tree)
 
 # Check if the path to the main repository is null (not in a Git repository)
 if [ -z "$main_repository_path" ]; then
-  echo "❌ You are not in a Git repository."
+  echo "❌ *** You are not in a Git repository."
   exit 1
 fi
 
@@ -21,7 +21,7 @@ for branch in $branches_with_changes; do
   changes=$(git -C "$main_repository_path" log origin/${branch}..${branch})
 
   if [ -n "$changes" ]; then
-    echo "❌ The branch '${branch}' has pending changes to push."
+    echo "❌ *** The branch '${branch}' has pending changes to push."
     changes_pending=true
   else
     echo "✅ The branch '${branch}' has no pending changes."
