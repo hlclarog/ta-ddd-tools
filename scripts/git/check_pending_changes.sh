@@ -21,10 +21,10 @@ for branch in $branches_with_changes; do
   changes=$(git -C "$main_repository_path" log origin/${branch}..${branch})
 
   if [ -n "$changes" ]; then
-    echo "The branch '${branch}' has pending changes to push."
+    echo "❌ The branch '${branch}' has pending changes to push."
     changes_pending=true
   else
-    echo "The branch '${branch}' has no pending changes."
+    echo "✅ The branch '${branch}' has no pending changes."
   fi
 done
 
